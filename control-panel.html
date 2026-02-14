@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>गोपनीय सूचना 😳</title>
+<style>
+body{
+  text-align:center;
+  font-family:Arial;
+  background:black;
+  color:red;
+  margin-top:100px;
+  overflow:hidden;
+}
+button{
+  padding:12px 25px;
+  font-size:18px;
+  margin:15px;
+  cursor:pointer;
+}
+#noBtn{
+  position:absolute;
+}
+</style>
+</head>
+
+<body>
+
+<h1>⚠️ ध्यान दें ⚠️</h1>
+<p id="text">आपके मोबाइल से कुछ संदिग्ध गतिविधि मिली है...</p>
+
+<button onclick="startPrank()">जांच करें 😈</button>
+<button id="noBtn" onmouseover="moveButton()">भागो 😅</button>
+
+<script>
+function moveButton(){
+  var x = Math.random() * (window.innerWidth - 100);
+  var y = Math.random() * (window.innerHeight - 50);
+  document.getElementById("noBtn").style.left = x + "px";
+  document.getElementById("noBtn").style.top = y + "px";
+}
+
+function startPrank(){
+  var txt = document.getElementById("text");
+  txt.innerHTML = "डेटा स्कैन हो रहा है... 25%";
+  
+  setTimeout(function(){
+    txt.innerHTML = "डेटा स्कैन हो रहा है... 60%";
+  },1000);
+
+  setTimeout(function(){
+    txt.innerHTML = "डेटा स्कैन हो रहा है... 99%";
+  },2000);
+
+  setTimeout(function(){
+    document.body.style.background="white";
+    document.body.style.color="black";
+    txt.innerHTML="😂 पकड़े गए! असल में आप बहुत ही खतरनाक दोस्त हो 🔥";
+  },3000);
+}
+</script>
+
+</body>
+</html>
